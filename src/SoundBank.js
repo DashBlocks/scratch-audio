@@ -86,7 +86,7 @@ class SoundBank {
      * @param {string} soundId - id of sound to play
      * @returns {Promise} promise that resolves when the sound finishes playback
      */
-    playSound (target, soundId) {
+    playSound (target, soundId, from, to) {
         const effects = this.getSoundEffects(soundId);
         const player = this.getSoundPlayer(soundId);
 
@@ -101,7 +101,7 @@ class SoundBank {
         effects.setEffectsFromTarget(target);
         player.connect(effects);
 
-        player.play();
+        player.play(from, to);
 
         return player.finished();
     }
