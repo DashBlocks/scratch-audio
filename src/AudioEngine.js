@@ -10,6 +10,7 @@ const SoundPlayer = require('./SoundPlayer');
 const EffectChain = require('./effects/EffectChain');
 const PanEffect = require('./effects/PanEffect');
 const PitchEffect = require('./effects/PitchEffect');
+const HighPassEffect = require('./effects/HighPassEffect');
 const VolumeEffect = require('./effects/VolumeEffect');
 
 const SoundBank = require('./SoundBank');
@@ -83,7 +84,7 @@ class AudioEngine {
          * Array of effects applied in order, left to right,
          * Left is closest to input, Right is closest to output
          */
-        this.effects = [PanEffect, PitchEffect, VolumeEffect];
+        this.effects = [PanEffect, PitchEffect, HighPassEffect, VolumeEffect];
 
         StartAudioContext(this.audioContext);
     }
@@ -103,7 +104,8 @@ class AudioEngine {
     get EFFECT_NAMES () {
         return {
             pitch: 'pitch',
-            pan: 'pan'
+            pan: 'pan',
+            highpass: 'highpass'
         };
     }
 
