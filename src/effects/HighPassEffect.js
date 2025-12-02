@@ -3,7 +3,7 @@ const Effect = require('./Effect');
 /**
  * A high pass filter effect, which cutoff frequency of the sound
  */
-class HighPassFilterEffect extends Effect {
+class HighPassEffect extends Effect {
     /**
      * Return the name of the effect.
      * @type {string}
@@ -58,4 +58,4 @@ class HighPassFilterEffect extends Effect {
     }
 }
 
-module.exports = HighPassFilterEffect;
+module.exports = HighPassEffect;
