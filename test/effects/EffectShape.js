@@ -3,6 +3,8 @@ const tap = require('tap');
 const PanEffect = require('../../src/effects/PanEffect');
 const PitchEffect = require('../../src/effects/PitchEffect');
 const VolumeEffect = require('../../src/effects/VolumeEffect');
+const HighPassEffect = require('../../src/effects/HighPassEffect');
+const LowPassEffect = require('../../src/effects/LowPassEffect');
 
 const AudioEngine = require('../__mocks__/AudioEngine');
 const AudioTarget = require('../__mocks__/AudioTarget');
@@ -146,3 +148,5 @@ const testEffect = (EffectClass, effectDepth) => {
 testEffect(PanEffect, 3);
 testEffect(PitchEffect, 0);
 testEffect(VolumeEffect, 1);
+testEffect(HighPassEffect, 1);
+testEffect(LowPassEffect, 1);
