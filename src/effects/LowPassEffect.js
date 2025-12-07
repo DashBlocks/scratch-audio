@@ -25,7 +25,7 @@ class LowPassEffect extends Effect {
         this.outputNode = audioContext.createGain();
 
         this.inputNode.type = 'lowpass';
-        this.inputNode.frequency.value = this.inputNode.frequency.max;
+        this.inputNode.frequency.value = 24000;
         this.inputNode.connect(this.outputNode);
 
         this.initialized = true;
